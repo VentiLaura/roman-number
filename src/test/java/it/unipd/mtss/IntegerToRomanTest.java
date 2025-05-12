@@ -28,6 +28,8 @@ valControllo=IntegerToRoman.convert(20);
 assertEquals("XX", valControllo);
 valControllo=IntegerToRoman.convert(50);
 assertEquals("L", valControllo);
+valControllo=IntegerToRoman.convert(100);
+assertEquals("C", valControllo);
   }
 //input illegali
 @Test
@@ -38,11 +40,11 @@ public void testIntegerToRomanInputDomain0() {
 assertEquals("Errore: input uguale a 0", exception.getMessage());
 }
 @Test
-public void testIntegerToRomanInputDomainMagg50() {
+public void testIntegerToRomanInputDomainMagg100() {
   Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-    IntegerToRoman.convert(61);
+    IntegerToRoman.convert(108);
 });
-assertEquals("Errore: input maggiore di 50", exception.getMessage());
+assertEquals("Errore: input maggiore di 100", exception.getMessage());
 }
 @Test
 public void testIntegerToRomanInputDomainNegative() {
@@ -53,7 +55,7 @@ assertEquals("Errore: input minore di 0", exception.getMessage());
 }
 @Test
     public void testIntegerToRomanInputHighValues() {
-      String valControllo=IntegerToRoman.convert(49);
-assertEquals("XLIX", valControllo);
+      String valControllo=IntegerToRoman.convert(99);
+assertEquals("XCIX", valControllo);
     }
 }
