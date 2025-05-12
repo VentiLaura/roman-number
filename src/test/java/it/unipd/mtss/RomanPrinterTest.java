@@ -6,14 +6,16 @@ public class RomanPrinterTest {
   public void testRomanPrinterPrintRight() {
 String valControllo=RomanPrinter.print(1);
 assertEquals(" ----- \n|_   _|\n  | |  \n  | |  \n _| |_ \n|_____|\n", valControllo);
-valControllo=RomanPrinter.print(3);
-assertEquals(" -----  -----  ----- \n"+
-"|_   _||_   _||_   _|\n"+
-"  | |    | |    | |  \n"+
-"  | |    | |    | |  \n"+
-" _| |_  _| |_  _| |_ \n"+
-"|_____||_____||_____|\n", valControllo);
-
+valControllo=RomanPrinter.print(5);
+assertEquals("--      --\n\\ \\    / /\n \\ \\  / / \n  \\ \\/ /  \n   \\  /   \n    \\/    \n", valControllo);
+valControllo=RomanPrinter.print(6);
+assertEquals("--      -- ----- \n" +
+  "\\ \\    / /|_   _|\n" +
+  " \\ \\  / /   | |  \n" +
+  "  \\ \\/ /    | |  \n" +
+  "   \\  /    _| |_ \n" +
+  "    \\/    |_____|\n",
+  valControllo);
   }
 //input illegali
 @Test
@@ -24,11 +26,11 @@ public void testRomanPrinterInputDomain0() {
 assertEquals("Errore: input uguale a 0", eccezione.getMessage());
 }
 @Test
-public void testRomanPrinterInputDomainMagg3() {
+public void testRomanPrinterInputDomainMagg6() {
   Exception eccezione = assertThrows(IllegalArgumentException.class, () -> {
-    RomanPrinter.print(5);
+    RomanPrinter.print(9);
 });
-assertEquals("Errore: input maggiore di 3", eccezione.getMessage());
+assertEquals("Errore: input maggiore di 6", eccezione.getMessage());
 }
 @Test
 public void testRomanPrinterInputDomainNegativo() {
