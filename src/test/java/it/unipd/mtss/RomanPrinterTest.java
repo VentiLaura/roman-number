@@ -32,7 +32,9 @@ valControllo=RomanPrinter.print(50);
 assertEquals(" -      \n| |     \n| |     \n| |     \n| |____ \n|______|\n", valControllo);
 valControllo=RomanPrinter.print(100);
 assertEquals("  ----- \n / ____|\n| |     \n| |     \n| |____ \n \\_____|\n", valControllo);
-  }
+valControllo=RomanPrinter.print(500);
+assertEquals(" -----  \n|  __ \\ \n| |  | |\n| |  | |\n| |__| |\n|_____/\n", valControllo);
+}
 //input illegali
 @Test
 public void testRomanPrinterInputDomain0() {
@@ -42,11 +44,11 @@ public void testRomanPrinterInputDomain0() {
 assertEquals("Errore: input uguale a 0", eccezione.getMessage());
 }
 @Test
-public void testRomanPrinterInputDomainMagg100() {
+public void testRomanPrinterInputDomainMagg500() {
   Exception eccezione = assertThrows(IllegalArgumentException.class, () -> {
-    RomanPrinter.print(120);
+    RomanPrinter.print(509);
 });
-assertEquals("Errore: input maggiore di 100", eccezione.getMessage());
+assertEquals("Errore: input maggiore di 500", eccezione.getMessage());
 }
 @Test
 public void testRomanPrinterInputDomainNegativo() {
