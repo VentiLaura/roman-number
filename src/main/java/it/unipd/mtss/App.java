@@ -2,14 +2,14 @@
 // [Laura] [Venturini] [2101061]
 // [Daniela] [Erba] [2111039]
 ////////////////////////////////////////////////////////////////////
+
+
 package it.unipd.mtss;
-/**
- * Hello world!
- *
- */
+import java.util.Scanner;
 public class App
 {
     public static void main( String[] args ) {
-        System.out.println( "Hello World!" );
+    Scanner input = new Scanner(System.in);
+    System.out.print(RomanPrinter.print(input.nextInt()));
     }
 }
