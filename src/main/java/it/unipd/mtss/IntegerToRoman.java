@@ -6,9 +6,9 @@
 package it.unipd.mtss;
 public class IntegerToRoman {
     public static void checking(int number) {
-            if (number>500) {
+            if (number>1000) {
                 throw new 
-                IllegalArgumentException("Errore: input maggiore di 500");
+                IllegalArgumentException("Errore: input maggiore di 1000");
             }
             if (number<0) {
                 throw new 
@@ -23,11 +23,19 @@ public class IntegerToRoman {
     checking(number);
         StringBuilder roman = new StringBuilder();
 
-        int[] valori = {500,400,100,90,
-        50,40,10,9,5,4,1};
+        int[] valori = {
+            1000, 900, 500, 400,
+             100,  90,  50,  40,
+              10,   9,   5,   4,
+               1
+        };
 
-        String[] valoriRomani = {"D", "CD","C",
-        "XC", "L", "XL","X", "IX", "V", "IV","I"};
+        String[] valoriRomani = {
+            "M", "CM", "D", "CD",
+            "C", "XC", "L", "XL",
+            "X", "IX", "V", "IV",
+            "I"
+        };
 
         for (int i = 0; i < valori.length; i++) {
             while (number >= valori[i]) {
