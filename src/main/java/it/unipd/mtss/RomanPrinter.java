@@ -6,9 +6,9 @@
 package it.unipd.mtss;
 public class RomanPrinter {
     public static void checkingInt(int number) {
-            if (number>10) {
+            if (number>20) {
                 throw new 
-                IllegalArgumentException("Errore: input maggiore di 10");
+                IllegalArgumentException("Errore: input maggiore di 20");
             }
             if (number<0) {
                 throw new 
