@@ -6,9 +6,9 @@
 package it.unipd.mtss;
 public class RomanPrinter {
     public static void checkingInt(int number) {
-            if (number>20) {
+            if (number>50) {
                 throw new 
-                IllegalArgumentException("Errore: input maggiore di 20");
+                IllegalArgumentException("Errore: input maggiore di 50");
             }
             if (number<0) {
                 throw new 
@@ -24,14 +24,19 @@ public class RomanPrinter {
   return printAsciiArt(IntegerToRoman.convert(num));
   }
   private static String printAsciiArt(String romanNumber){
-    String[][] caratteriAscii = new String[6][2];
-caratteriAscii[0] = new String[]{"--   --"," ----- ","--      --"
-};
-caratteriAscii[1] = new String[]{"\\ \\ / /","|_   _|","\\ \\    / /"};
-caratteriAscii[2] = new String[]{" \\ V / ","  | |  "," \\ \\  / / "};
-caratteriAscii[3] = new String[]{"  > <  ","  | |  ","  \\ \\/ /  "};
-caratteriAscii[4] = new String[]{" / . \\ "," _| |_ ","   \\  /   "};
-caratteriAscii[5] = new String[]{"/_/ \\_\\","|_____|","    \\/    "};
+    String[][] caratteriAscii = new String[6][3];
+caratteriAscii[0] = new String[]{"--   --"," ----- ","--      --",
+" -      "};
+caratteriAscii[1] = new String[]{"\\ \\ / /","|_   _|","\\ \\    / /",
+"| |     "};
+caratteriAscii[2] = new String[]{" \\ V / ","  | |  "," \\ \\  / / ",
+"| |     "};
+caratteriAscii[3] = new String[]{"  > <  ","  | |  ","  \\ \\/ /  ",
+"| |     "};
+caratteriAscii[4] = new String[]{" / . \\ "," _| |_ ","   \\  /   ",
+"| |____ "};
+caratteriAscii[5] = new String[]{"/_/ \\_\\","|_____|","    \\/    ",
+"|______|"};
 
 String result ="";
 
@@ -51,6 +56,8 @@ for (int i=0; i<=5&&!romanNumber.isEmpty(); i++) {
             return 1;}
         if (primoCarattere=='V') {
             return 2;}
+        if (primoCarattere=='L'){
+            return 3;}
         return 0; 
   }
   } 
